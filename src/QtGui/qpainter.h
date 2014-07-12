@@ -63,6 +63,7 @@ class QPainterWrap : public node::ObjectWrap {
   // Paint actions
   static v8::Handle<v8::Value> FillRect(const v8::Arguments& args);
   static v8::Handle<v8::Value> DrawText(const v8::Arguments& args);
+  static v8::Handle<v8::Value> DrawEllipse(const v8::Arguments& args);
   static v8::Handle<v8::Value> DrawPixmap(const v8::Arguments& args);
   static v8::Handle<v8::Value> DrawImage(const v8::Arguments& args);
   static v8::Handle<v8::Value> FillPath(const v8::Arguments& args);

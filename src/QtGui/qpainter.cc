@@ -79,6 +79,8 @@ void QPainterWrap::Initialize(Handle<Object> target) {
       FunctionTemplate::New(FillRect)->GetFunction());
   tpl->PrototypeTemplate()->Set(String::NewSymbol("drawText"),
       FunctionTemplate::New(DrawText)->GetFunction());
+  tpl->PrototypeTemplate()->Set(String::NewSymbol("drawEllipse"),
+      FunctionTemplate::New(DrawEllipse)->GetFunction());
   tpl->PrototypeTemplate()->Set(String::NewSymbol("drawPixmap"),
       FunctionTemplate::New(DrawPixmap)->GetFunction());
   tpl->PrototypeTemplate()->Set(String::NewSymbol("drawImage"),
@@ -331,6 +333,24 @@ Handle<Value> QPainterWrap::DrawText(const Arguments& args) {
       
   q->drawText(args[0]->IntegerValue(), args[1]->IntegerValue(), 
       qt_v8::ToQString(args[2]->ToString()));
+
+  return scope.Close(Undefined());
+}
+
+// Supported versions:
+//   drawEllipse(int x, int y, int width, int height)
+Handle<Value> QPainterWrap::DrawEllipse(const Arguments& args) {
+  HandleScope scope;
+
+  QPainterWrap* w = ObjectWrap::Unwrap<QPainterWrap>(args.This());
+  QPainter* q = w->GetWrapped();
+
+  if (!args[0]->IsNumber() || !args[1]->IsNumber() || !args[2]->IsNumber() || !args[3]->IsNumber())
+    return ThrowException(Exception::TypeError(
+        String::New("QPainterWrap:DrawEllipse: bad arguments")));
+      
+  q->drawEllipse(args[0]->IntegerValue(), args[1]->IntegerValue(), 
+      args[2]->IntegerValue(), args[3]->IntegerValue());
 
   return scope.Close(Undefined());
 }
