@@ -58,6 +58,8 @@ void QPainterPathWrap::Initialize(Handle<Object> target) {
       FunctionTemplate::New(MoveTo)->GetFunction());
   tpl->PrototypeTemplate()->Set(String::NewSymbol("lineTo"),
       FunctionTemplate::New(LineTo)->GetFunction());
+  tpl->PrototypeTemplate()->Set(String::NewSymbol("addEllipse"),
+      FunctionTemplate::New(AddEllipse)->GetFunction());
   tpl->PrototypeTemplate()->Set(String::NewSymbol("currentPosition"),
       FunctionTemplate::New(CurrentPosition)->GetFunction());
   tpl->PrototypeTemplate()->Set(String::NewSymbol("closeSubpath"),
@@ -137,6 +139,26 @@ Handle<Value> QPainterPathWrap::LineTo(const Arguments& args) {
   QPointF* pointf = pointf_wrap->GetWrapped();
 
   q->lineTo(*pointf);
+
+  return scope.Close(Undefined());
+}
+
+// Supported versions:
+//   addEllipse( realf, realf, realf, realf )
+Handle<Value> QPainterPathWrap::AddEllipse(const Arguments& args) {
+  HandleScope scope;
+
+  QPainterPathWrap* w = ObjectWrap::Unwrap<QPainterPathWrap>(args.This());
+  QPainterPath* q = w->GetWrapped();
+
+  if (!args[0]->IsNumber() || !args[1]->IsNumber() ||
+      !args[2]->IsNumber() || !args[3]->IsNumber() ) {
+    return ThrowException(Exception::TypeError(
+      String::New("QPainterPathWrap::AddEllipse: argument not recognized")));
+  }
+
+  q->addEllipse(args[0]->NumberValue(), args[1]->NumberValue(),
+     args[2]->NumberValue(), args[3]->NumberValue());
 
   return scope.Close(Undefined());
 }

@@ -49,6 +49,7 @@ class QPainterPathWrap : public node::ObjectWrap {
   static v8::Handle<v8::Value> MoveTo(const v8::Arguments& args);
   static v8::Handle<v8::Value> CurrentPosition(const v8::Arguments& args);
   static v8::Handle<v8::Value> LineTo(const v8::Arguments& args);
+  static v8::Handle<v8::Value> AddEllipse(const v8::Arguments& args);
   static v8::Handle<v8::Value> CloseSubpath(const v8::Arguments& args);
 
   // Wrapped object
