@@ -42,6 +42,18 @@
             '../deps/qt-4.8.0/darwin/x64/lib/QtTest.framework/QtTest'
           ],
         }],
+        ['OS=="mac" and 0', { # mac with qt from homebrew
+          'include_dirs': [
+            '<!@(pkg-config --cflags QtCore QtGui QtTest|sed "s/-D[A-z_]*//g; s/-I//g")',
+          ],
+          'libraries': [
+            '<!@(pkg-config --libs QtCore QtGui QtTest|sed \'s,-F[^\ ]*,,g; s, -framework \([A-z_]*\),/\\1.framework,g;\')',
+            'QtCore.framework',
+          ],
+          'mac_framework_dirs': [
+            '<!@(pkg-config --libs QtCore QtGui QtTest|sed \'s, -framework [A-z_]*,,g; s,-F,,g\')',
+          ],
+        }],
         ['OS=="linux"', {
           'cflags': [
             '<!@(pkg-config --cflags QtCore QtGui QtTest)'
