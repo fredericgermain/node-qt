@@ -30,7 +30,6 @@
 #ifndef QKEYEVENTWRAP_H
 #define QKEYEVENTWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QKeyEvent>
 

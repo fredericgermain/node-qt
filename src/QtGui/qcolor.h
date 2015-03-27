@@ -30,7 +30,6 @@
 #ifndef QCOLORWRAP_H
 #define QCOLORWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QColor>
 

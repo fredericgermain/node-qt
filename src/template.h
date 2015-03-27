@@ -30,7 +30,6 @@
 #ifndef __TEMPLATE__WRAP_H
 #define __TEMPLATE__WRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <__Template__>
 

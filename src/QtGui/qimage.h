@@ -30,7 +30,6 @@
 #ifndef QIMAGEWRAP_H
 #define QIMAGEWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QImage>
 

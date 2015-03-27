@@ -30,7 +30,6 @@
 #ifndef QPAINTERPATHWRAP_H
 #define QPAINTERPATHWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QPainterPath>
 

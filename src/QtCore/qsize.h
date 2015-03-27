@@ -30,7 +30,6 @@
 #ifndef QSIZEWRAP_H
 #define QSIZEWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QSize>
 

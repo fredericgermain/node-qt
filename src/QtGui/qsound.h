@@ -30,7 +30,6 @@
 #ifndef QSOUNDWRAP_H
 #define QSOUNDWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QSound>
 

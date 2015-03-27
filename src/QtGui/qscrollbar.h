@@ -30,7 +30,6 @@
 #ifndef QSCROLLBARWRAP_H
 #define QSCROLLBARWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QScrollBar>
 

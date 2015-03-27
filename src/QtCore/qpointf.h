@@ -30,7 +30,6 @@
 #ifndef QPOINTFWRAP_H
 #define QPOINTFWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QPointF>
 

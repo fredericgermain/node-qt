@@ -30,7 +30,6 @@
 #ifndef QWIDGETWRAP_H
 #define QWIDGETWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QWidget>
 

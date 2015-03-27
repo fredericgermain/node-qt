@@ -30,7 +30,6 @@
 #ifndef QPENWRAP_H
 #define QPENWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QPen>
 

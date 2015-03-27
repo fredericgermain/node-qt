@@ -30,7 +30,6 @@
 #ifndef QSCROLLAREAWRAP_H
 #define QSCROLLAREAWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QScrollArea>
 

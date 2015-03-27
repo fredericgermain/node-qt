@@ -30,7 +30,6 @@
 #ifndef QFONTWRAP_H
 #define QFONTWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QFont>
 

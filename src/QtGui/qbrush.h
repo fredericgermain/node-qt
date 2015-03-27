@@ -30,7 +30,6 @@
 #ifndef QBRUSHWRAP_H
 #define QBRUSHWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QBrush>
 

@@ -30,7 +30,6 @@
 #ifndef QMATRIXWRAP_H
 #define QMATRIXWRAP_H
 
-#define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <QMatrix>
 
