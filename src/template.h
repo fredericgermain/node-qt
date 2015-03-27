@@ -45,13 +45,13 @@ class __Template__Wrap : public node::ObjectWrap {
   static v8::Handle<v8::Value> NewInstance(__Template__ q);
 
  private:
-  __Template__Wrap(const v8::Arguments& args);
+  __Template__Wrap(_NAN_METHOD_ARGS);
   ~__Template__Wrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Example(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Example(_NAN_METHOD_ARGS);
 
   // Wrapped object
   __Template__* q_;

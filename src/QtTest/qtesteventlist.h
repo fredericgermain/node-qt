@@ -43,12 +43,12 @@ class QTestEventListWrap : public node::ObjectWrap {
   QTestEventListWrap();
   ~QTestEventListWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> AddMouseClick(const v8::Arguments& args);
-  static v8::Handle<v8::Value> AddKeyPress(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Simulate(const v8::Arguments& args);
+  static v8::Handle<v8::Value> AddMouseClick(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> AddKeyPress(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Simulate(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QTestEventList* q_;

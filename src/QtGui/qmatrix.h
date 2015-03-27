@@ -45,20 +45,20 @@ class QMatrixWrap : public node::ObjectWrap {
   static v8::Handle<v8::Value> NewInstance(QMatrix q);
 
  private:
-  QMatrixWrap(const v8::Arguments& args);
+  QMatrixWrap(_NAN_METHOD_ARGS);
   ~QMatrixWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> M11(const v8::Arguments& args);
-  static v8::Handle<v8::Value> M12(const v8::Arguments& args);
-  static v8::Handle<v8::Value> M21(const v8::Arguments& args);
-  static v8::Handle<v8::Value> M22(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Dx(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Dy(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Translate(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Scale(const v8::Arguments& args);
+  static v8::Handle<v8::Value> M11(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> M12(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> M21(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> M22(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Dx(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Dy(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Translate(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Scale(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QMatrix* q_;

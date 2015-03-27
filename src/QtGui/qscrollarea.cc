@@ -43,7 +43,7 @@ Persistent<Function> QScrollAreaWrap::constructor;
 // Supported implementations:
 //   QScrollArea ( )
 //   QScrollArea ( QWidget widget )
-QScrollAreaWrap::QScrollAreaWrap(const v8::Arguments& args) {
+QScrollAreaWrap::QScrollAreaWrap(_NAN_METHOD_ARGS) {
   if (args.Length() == 0) {
     // QScrollArea ( )
 

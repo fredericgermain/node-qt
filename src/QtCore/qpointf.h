@@ -45,15 +45,15 @@ class QPointFWrap : public node::ObjectWrap {
   static v8::Handle<v8::Value> NewInstance(QPointF q);
 
  private:
-  QPointFWrap(const v8::Arguments& args);
+  QPointFWrap(_NAN_METHOD_ARGS);
   ~QPointFWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> IsNull(const v8::Arguments& args);
-  static v8::Handle<v8::Value> X(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Y(const v8::Arguments& args);
+  static v8::Handle<v8::Value> IsNull(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> X(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Y(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QPointF* q_;

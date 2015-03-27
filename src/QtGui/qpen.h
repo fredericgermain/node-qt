@@ -40,10 +40,10 @@ class QPenWrap : public node::ObjectWrap {
   QPen* GetWrapped() const { return q_; };
 
  private:
-  QPenWrap(const v8::Arguments& args);
+  QPenWrap(_NAN_METHOD_ARGS);
   ~QPenWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
 

@@ -40,15 +40,15 @@ class QSoundWrap : public node::ObjectWrap {
   QSound* GetWrapped() const { return q_; };
 
  private:
-  QSoundWrap(const v8::Arguments& args);
+  QSoundWrap(_NAN_METHOD_ARGS);
   ~QSoundWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Play(const v8::Arguments& args);
-  static v8::Handle<v8::Value> FileName(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetLoops(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Play(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> FileName(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetLoops(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QSound* q_;

@@ -43,29 +43,29 @@ class QPainterWrap : public node::ObjectWrap {
   QPainterWrap();
   ~QPainterWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   //
   // Wrapped methods exposed to JS
   //
 
-  static v8::Handle<v8::Value> Begin(const v8::Arguments& args);
-  static v8::Handle<v8::Value> End(const v8::Arguments& args);
-  static v8::Handle<v8::Value> IsActive(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Save(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Restore(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Begin(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> End(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> IsActive(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Save(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Restore(_NAN_METHOD_ARGS);
 
   // State
-  static v8::Handle<v8::Value> SetPen(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetFont(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetMatrix(const v8::Arguments& args);
+  static v8::Handle<v8::Value> SetPen(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetFont(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetMatrix(_NAN_METHOD_ARGS);
 
   // Paint actions
-  static v8::Handle<v8::Value> FillRect(const v8::Arguments& args);
-  static v8::Handle<v8::Value> DrawText(const v8::Arguments& args);
-  static v8::Handle<v8::Value> DrawPixmap(const v8::Arguments& args);
-  static v8::Handle<v8::Value> DrawImage(const v8::Arguments& args);
-  static v8::Handle<v8::Value> StrokePath(const v8::Arguments& args);
+  static v8::Handle<v8::Value> FillRect(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> DrawText(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> DrawPixmap(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> DrawImage(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> StrokePath(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QPainter* q_;

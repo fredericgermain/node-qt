@@ -70,36 +70,36 @@ class QWidgetWrap : public node::ObjectWrap {
   QWidgetWrap(QWidgetImpl* parent);
   ~QWidgetWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Resize(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Show(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Close(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Size(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Width(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Height(const v8::Arguments& args);
-  static v8::Handle<v8::Value> ObjectName(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetObjectName(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Parent(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Update(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetMouseTracking(const v8::Arguments& args);
-  static v8::Handle<v8::Value> HasMouseTracking(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetFocusPolicy(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Move(const v8::Arguments& args);
-  static v8::Handle<v8::Value> X(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Y(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Resize(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Show(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Close(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Size(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Width(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Height(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> ObjectName(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetObjectName(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Parent(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Update(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetMouseTracking(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> HasMouseTracking(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetFocusPolicy(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Move(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> X(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Y(_NAN_METHOD_ARGS);
 
   // QUIRK
   // Event binding. These functions bind implemented event handlers above
   // to the given callbacks. This is necessary as in Qt such handlers
   // are virtual and we can't dynamically implement them from JS
-  static v8::Handle<v8::Value> PaintEvent(const v8::Arguments& args);
-  static v8::Handle<v8::Value> MousePressEvent(const v8::Arguments& args);
-  static v8::Handle<v8::Value> MouseReleaseEvent(const v8::Arguments& args);
-  static v8::Handle<v8::Value> MouseMoveEvent(const v8::Arguments& args);
-  static v8::Handle<v8::Value> KeyPressEvent(const v8::Arguments& args);
-  static v8::Handle<v8::Value> KeyReleaseEvent(const v8::Arguments& args);
+  static v8::Handle<v8::Value> PaintEvent(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> MousePressEvent(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> MouseReleaseEvent(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> MouseMoveEvent(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> KeyPressEvent(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> KeyReleaseEvent(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QWidgetImpl* q_;

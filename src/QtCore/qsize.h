@@ -48,11 +48,11 @@ class QSizeWrap : public node::ObjectWrap {
   QSizeWrap();
   ~QSizeWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Width(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Height(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Width(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Height(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QSize* q_;

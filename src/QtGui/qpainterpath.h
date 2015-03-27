@@ -40,16 +40,16 @@ class QPainterPathWrap : public node::ObjectWrap {
   QPainterPath* GetWrapped() const { return q_; };
 
  private:
-  QPainterPathWrap(const v8::Arguments& args);
+  QPainterPathWrap(_NAN_METHOD_ARGS);
   ~QPainterPathWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> MoveTo(const v8::Arguments& args);
-  static v8::Handle<v8::Value> CurrentPosition(const v8::Arguments& args);
-  static v8::Handle<v8::Value> LineTo(const v8::Arguments& args);
-  static v8::Handle<v8::Value> CloseSubpath(const v8::Arguments& args);
+  static v8::Handle<v8::Value> MoveTo(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> CurrentPosition(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> LineTo(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> CloseSubpath(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QPainterPath* q_;

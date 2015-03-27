@@ -48,11 +48,11 @@ class QKeyEventWrap : public node::ObjectWrap {
   QKeyEventWrap();
   ~QKeyEventWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Key(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Text(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Key(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Text(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QKeyEvent* q_;

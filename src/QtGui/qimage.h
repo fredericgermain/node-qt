@@ -40,13 +40,13 @@ class QImageWrap : public node::ObjectWrap {
   QImage* GetWrapped() const { return q_; };
 
  private:
-  QImageWrap(const v8::Arguments& args);
+  QImageWrap(_NAN_METHOD_ARGS);
   ~QImageWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> IsNull(const v8::Arguments& args);
+  static v8::Handle<v8::Value> IsNull(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QImage* q_;

@@ -48,12 +48,12 @@ class QMouseEventWrap : public node::ObjectWrap {
   QMouseEventWrap();
   ~QMouseEventWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> X(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Y(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Button(const v8::Arguments& args);
+  static v8::Handle<v8::Value> X(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Y(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Button(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QMouseEvent* q_;

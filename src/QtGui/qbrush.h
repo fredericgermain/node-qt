@@ -40,10 +40,10 @@ class QBrushWrap : public node::ObjectWrap {
   QBrush* GetWrapped() const { return q_; };
 
  private:
-  QBrushWrap(const v8::Arguments& args);
+  QBrushWrap(_NAN_METHOD_ARGS);
   ~QBrushWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
 

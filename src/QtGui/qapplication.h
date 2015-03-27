@@ -42,11 +42,11 @@ class QApplicationWrap : public node::ObjectWrap {
   QApplicationWrap();
   ~QApplicationWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> ProcessEvents(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Exec(const v8::Arguments& args);
+  static v8::Handle<v8::Value> ProcessEvents(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Exec(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QApplication* q_;

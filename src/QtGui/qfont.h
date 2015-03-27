@@ -45,20 +45,20 @@ class QFontWrap : public node::ObjectWrap {
   static v8::Handle<v8::Value> NewInstance(QFont q);
 
  private:
-  QFontWrap(const v8::Arguments& args);
+  QFontWrap(_NAN_METHOD_ARGS);
   ~QFontWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> SetFamily(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Family(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetPixelSize(const v8::Arguments& args);
-  static v8::Handle<v8::Value> PixelSize(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetPointSize(const v8::Arguments& args);
-  static v8::Handle<v8::Value> PointSize(const v8::Arguments& args);
-  static v8::Handle<v8::Value> SetPointSizeF(const v8::Arguments& args);
-  static v8::Handle<v8::Value> PointSizeF(const v8::Arguments& args);
+  static v8::Handle<v8::Value> SetFamily(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Family(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetPixelSize(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> PixelSize(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetPointSize(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> PointSize(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> SetPointSizeF(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> PointSizeF(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QFont* q_;

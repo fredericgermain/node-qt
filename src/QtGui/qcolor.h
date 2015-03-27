@@ -40,17 +40,17 @@ class QColorWrap : public node::ObjectWrap {
   QColor* GetWrapped() const { return q_; };
 
  private:
-  QColorWrap(const v8::Arguments& args);
+  QColorWrap(_NAN_METHOD_ARGS);
   ~QColorWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
+  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Red(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Green(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Blue(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Alpha(const v8::Arguments& args);
-  static v8::Handle<v8::Value> Name(const v8::Arguments& args);
+  static v8::Handle<v8::Value> Red(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Green(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Blue(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Alpha(_NAN_METHOD_ARGS);
+  static v8::Handle<v8::Value> Name(_NAN_METHOD_ARGS);
 
   // Wrapped object
   QColor* q_;
