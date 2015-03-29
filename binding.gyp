@@ -33,7 +33,8 @@
             'deps/qt-4.8.0/darwin/x64/include',
             'deps/qt-4.8.0/darwin/x64/include/QtCore',
             'deps/qt-4.8.0/darwin/x64/include/QtGui',
-            'deps/qt-4.8.0/darwin/x64/include/QtTest'
+            'deps/qt-4.8.0/darwin/x64/include/QtTest',
+            "<!(node -e \"require('nan')\")"
           ],
           'libraries': [
             # TODO: fix node-gyp behavior that requires ../

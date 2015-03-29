@@ -31,6 +31,7 @@
 #define QSIZEWRAP_H
 
 #include <node.h>
+#include <nan.h>
 #include <QSize>
 
 class QSizeWrap : public node::ObjectWrap {
