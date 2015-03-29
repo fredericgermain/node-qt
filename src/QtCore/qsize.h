@@ -39,7 +39,7 @@ class QSizeWrap : public node::ObjectWrap {
   static void Initialize(v8::Handle<v8::Object> target);
   static v8::Handle<v8::Value> NewInstance(QSize q);
   QSize* GetWrapped() const { return q_; };
-  void SetWrapped(QSize q) { 
+  void SetWrapped(const QSize &q) { 
     if (q_) delete q_; 
     q_ = new QSize(q); 
   };
@@ -48,11 +48,11 @@ class QSizeWrap : public node::ObjectWrap {
   QSizeWrap();
   ~QSizeWrap();
   static v8::Persistent<v8::Function> constructor;
-  static v8::Handle<v8::Value> New(_NAN_METHOD_ARGS);
+  static NAN_METHOD(New);
 
   // Wrapped methods
-  static v8::Handle<v8::Value> Width(_NAN_METHOD_ARGS);
-  static v8::Handle<v8::Value> Height(_NAN_METHOD_ARGS);
+  static NAN_METHOD(Width);
+  static NAN_METHOD(Height);
 
   // Wrapped object
   QSize* q_;

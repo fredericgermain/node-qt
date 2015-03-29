@@ -45,53 +45,66 @@ QSizeWrap::~QSizeWrap() {
 
 void QSizeWrap::Initialize(Handle<Object> target) {
   // Prepare constructor template
-  Local<FunctionTemplate> tpl = FunctionTemplate::New(New);
-  tpl->SetClassName(String::NewSymbol("QSize"));
+  Local<FunctionTemplate> tpl = NanNewFunctionTemplate(New);
+  tpl->SetClassName(NanSymbol("QSize"));
   tpl->InstanceTemplate()->SetInternalFieldCount(1);  
 
   // Prototype
-  tpl->PrototypeTemplate()->Set(String::NewSymbol("width"),
-      FunctionTemplate::New(Width)->GetFunction());
-  tpl->PrototypeTemplate()->Set(String::NewSymbol("height"),
-      FunctionTemplate::New(Height)->GetFunction());
+  tpl->PrototypeTemplate()->Set(NanSymbol("width"),
+      NanNewFunctionTemplate(Width)->GetFunction());
+  tpl->PrototypeTemplate()->Set(NanSymbol("height"),
+      NanNewFunctionTemplate(Height)->GetFunction());
 
-  constructor = Persistent<Function>::New(tpl->GetFunction());
-  target->Set(String::NewSymbol("QSize"), constructor);
+  Persistent<FunctionTemplate> constructor (v8::Isolate::GetCurrent(), tpl);
+  target->Set(NanSymbol("QSize"), tpl->GetFunction());
 }
 
-Handle<Value> QSizeWrap::New(const Arguments& args) {
-  HandleScope scope;
+#include <iostream>
+
+NAN_METHOD(QSizeWrap::New) {
+  NanScope();
 
   QSizeWrap* w = new QSizeWrap();
   w->Wrap(args.This());
+  w->SetWrapped(QSize(2, 3));
+std::cout << "New ";
+//std::cout << &args.This();
+std::cout << "\n";
 
-  return args.This();
+  NanReturnValue(args.This());
 }
 
 Handle<Value> QSizeWrap::NewInstance(QSize q) {
-  HandleScope scope;
+  NanScope();
   
-  Local<Object> instance = constructor->NewInstance(0, NULL);
+  Local<Object> instance = Local<Function>::New(v8::Isolate::GetCurrent(), constructor)->NewInstance(0, NULL);
   QSizeWrap* w = node::ObjectWrap::Unwrap<QSizeWrap>(instance);
   w->SetWrapped(q);
 
-  return scope.Close(instance);
+std::cout << "NewInstance ";
+std::cout << &q;
+std::cout << "\n";
+  return instance;
 }
 
-Handle<Value> QSizeWrap::Width(const Arguments& args) {
-  HandleScope scope;
+NAN_METHOD(QSizeWrap::Width) {
+  NanScope();
 
   QSizeWrap* w = ObjectWrap::Unwrap<QSizeWrap>(args.This());
   QSize* q = w->GetWrapped();
 
-  return scope.Close(Number::New(q->width()));
+  NanReturnValue(NanNew<Number>(q->width()));
 }
 
-Handle<Value> QSizeWrap::Height(const Arguments& args) {
-  HandleScope scope;
+NAN_METHOD(QSizeWrap::Height) {
+  NanScope();
+std::cout << "Height ";
+//std::cout << &args.This();
 
   QSizeWrap* w = ObjectWrap::Unwrap<QSizeWrap>(args.This());
   QSize* q = w->GetWrapped();
 
-  return scope.Close(Number::New(q->height()));
+std::cout << w << "\n";
+std::cout << q << "\n";
+  NanReturnValue(NanNew<Number>(q->height()));
 }
