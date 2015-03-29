@@ -54,9 +54,12 @@
 using namespace v8;
 
 void Initialize(Handle<Object> target) {
+  #if 0
   QApplicationWrap::Initialize(target);
   QWidgetWrap::Initialize(target);
+  #endif
   QSizeWrap::Initialize(target);
+  #if 0
   QMouseEventWrap::Initialize(target);
   QKeyEventWrap::Initialize(target);
   QTestEventListWrap::Initialize(target);
@@ -73,6 +76,7 @@ void Initialize(Handle<Object> target) {
   QSoundWrap::Initialize(target);
   QScrollAreaWrap::Initialize(target);
   QScrollBarWrap::Initialize(target);
+  #endif
 }
 
 NODE_MODULE(qt, Initialize)

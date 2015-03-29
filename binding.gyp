@@ -6,6 +6,8 @@
         'src/qt.cc', 
 
         'src/QtCore/qsize.cc',
+      ],
+      'sources0': [
         'src/QtCore/qpointf.cc',
 
         'src/QtGui/qapplication.cc',
